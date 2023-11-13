@@ -1,0 +1,257 @@
+﻿<nav class="pcoded-navbar" style="background-color:#0d2933;">
+    <div class="pcoded-inner-navbar main-menu" style="background-color:#0d2933">
+        <div class="pcoded-navigatio-lavel">İdarəetmə</div>
+        <ul class="pcoded-item pcoded-left-item">
+            @*@if (User.HasAccess("admin.dashboard.index"))
+            }
+            {*@
+            <li>
+                <a asp-controller="dashboard" asp-action="index">
+                    <span class="pcoded-micon">
+                        <i class="feather icon-home"></i>
+                    </span>
+                    <span class="pcoded-mtext">Ana səhifə</span>
+                </a>
+            </li>
+            @*@if (User.HasAccess("admin.reservations.index"))
+            {
+
+            }
+            *@
+            <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-book"></i></span>
+                    <span class="pcoded-mtext">Rezervasiyalar</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li>
+                        <a asp-controller="reservations" asp-action="index">
+                            <span class="pcoded-mtext">Aktiv rezervasiyalar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="reservations" asp-action="deletedindex">
+                            <span class="pcoded-mtext">Kecmiş rezervasiyalar</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @*@if (User.HasAccess("admin.rooms.index"))
+            {
+
+            }
+            *@
+
+            <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-box"></i></span>
+                    <span class="pcoded-mtext">Menyu</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li>
+                        <a asp-controller="Menu" asp-action="index" asp-area="admin" asp-route-id="@ViewBag.Demo">
+                            <span class="pcoded-mtext">Mövcud Menyular</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Menu" asp-action="deletedindex">
+                            <span class="pcoded-mtext">Silinmiş Menyular</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @*@if (User.HasAccess("admin.roomtypes.index"))
+            {
+            *@
+            <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"> <i class="feather icon-mail"></i></span>
+                    <span class="pcoded-mtext">Sifarişlər</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li>
+                        <a asp-controller="RepairOrder" asp-action="index">
+                            <span class="pcoded-mtext">Mövcud Sifarişlər</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="RepairOrder" asp-action="deletedindex">
+                            <span class="pcoded-mtext">Silinmiş Sifarişlər</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-grid"></i></span>
+                    <span class="pcoded-mtext">Servislər</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li>
+                        <a asp-controller="Service" asp-action="index">
+                            <span class="pcoded-mtext">Mövcud Servislər</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="Service" asp-action="deletedindex">
+                            <span class="pcoded-mtext">Silinmiş Servislər</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            }
+            @*@if (User.HasAccess("admin.payments.index"))
+            {
+
+            }
+            *@
+            <li>
+                <a asp-controller="Cargo" asp-action="index" asp-area="admin">
+                    <span class="pcoded-micon">
+                        <i class="fa-solid fa-truck"></i>
+                    </span>
+                    <span class="pcoded-mtext">Çatdırılma</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="warranty" asp-action="index" asp-area="admin">
+                    <span class="pcoded-micon">
+                        <i class="feather icon-credit-card"></i>
+                    </span>
+                    <span class="pcoded-mtext">Zəmanət</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="aboutus" asp-action="index" asp-area="admin">
+                    <span class="pcoded-micon">
+                        <i class="feather icon-info"></i>
+                    </span>
+                    <span class="pcoded-mtext">Haqqımızda</span>
+                </a>
+            </li>
+            <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-inbox"></i></span>
+                    <span class="pcoded-mtext">Forum</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li>
+                        <a asp-controller="blogposts" asp-action="index">
+                            <span class="pcoded-mtext">Paylaşımlar</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-controller="blogposts" asp-action="DeletedPosts">
+                            <span class="pcoded-mtext">Silinmiş paylaşımlar</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @*@if (User.HasAccess("admin.radissonhotels.index") || User.HasAccess("admin.abouts.index") || User.HasAccess("admin.teams.index") || User.HasAccess("admin.servicesheaders.index") || User.HasAccess("admin.servicesbody.index"))
+            {
+            }
+            *@
+            <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="feather icon-info"></i></span>
+                    <span class="pcoded-mtext">Radisson Hotel</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    @*@if (User.HasAccess("admin.radissonhotels.index"))
+                    {
+                    }
+                    *@
+                    <li>
+                        <a asp-controller="RadissonHotels" asp-action="index">
+                            <span class="pcoded-mtext">Otel Haqqında</span>
+                        </a>
+                    </li>
+                    @*@if (User.HasAccess("admin.abouts.index"))
+                    {
+                    }
+                    *@
+                    <li>
+                        <a asp-controller="Abouts" asp-action="index">
+                            <span class="pcoded-mtext">Otel Qeydləri</span>
+                        </a>
+                    </li>
+                    @*@if (User.HasAccess("admin.teams.index"))
+                    {
+                    }
+                    *@
+                    <li>
+                        <a asp-controller="Teams" asp-action="index">
+                            <span class="pcoded-mtext">Komanda</span>
+                        </a>
+                    </li>
+                    @*@if (User.HasAccess("admin.servicesheaders.index") || User.HasAccess("admin.servicesbody.index"))
+                    {
+                    <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                    <a href="javascript:void(0)">
+                    <span>Xidmətlər</span>
+                    </a>
+                    <ul class="pcoded-submenu">
+                    <li>
+                    <a asp-controller="ServicesHeaders" asp-action="index">
+                    <span class="pcoded-mtext">Başlıq</span>
+                    </a>
+                    </li>
+                    <li>
+                    <a asp-controller="ServicesBodies" asp-action="index">
+                    <span class="pcoded-mtext">Əsas Hissə</span>
+                    </a>
+                    </li>
+                    </ul>
+                    </li>
+                    }*@
+                </ul>
+            </li>
+        </ul>
+        @*@if (User.HasAccess("admin.users.index") || User.HasAccess("admin.radissonroles.index") || User.HasAccess("admin.subscribes.index"))
+        {
+        }*@
+        <div class="pcoded-navigatio-lavel">Parametrlər</div>
+        <ul class="pcoded-item pcoded-left-item">
+            @*@if (User.HasAccess("admin.users.index"))
+            {
+            }*@
+            <li>
+                <a asp-controller="users" asp-action="index">
+                    <span class="pcoded-micon">
+                        <i class="feather icon-user"></i>
+                    </span>
+                    <span class="pcoded-mtext">İstifadəçilər</span>
+                </a>
+            </li>
+            @*@if (User.HasAccess("admin.radissonroles.index"))
+            {
+            }*@
+            <li>
+                <a asp-controller="RadissonRoles" asp-action="index">
+                    <span class="pcoded-micon">
+                        <i class="feather icon-sliders"></i>
+                    </span>
+                    <span class="pcoded-mtext">Rollar</span>
+                </a>
+            </li>
+            @*@if (User.HasAccess("admin.subscribes.index"))
+            {
+            }*@
+            <li>
+                <a asp-controller="Subscribes" asp-action="index">
+                    <span class="pcoded-micon">
+                        <i class="feather icon-at-sign"></i>
+                    </span>
+                    <span class="pcoded-mtext">Abunələr</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

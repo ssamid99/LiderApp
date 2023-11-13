@@ -1,0 +1,87 @@
+/* Slider Custom Arrow Style */
+
+.slider_custom_arrow .owl-nav {
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  margin: 0;
+}
+
+.slider_custom_arrow .owl-nav button {
+  height: 44px;
+  width: 44px;
+  border-radius: 50% !important;
+  background: #fff !important;
+  color: #0071bb !important;
+}
+
+.slider_custom_arrow .owl-nav button:first-of-type {
+  translate: -80px;
+}
+
+.slider_custom_arrow .owl-nav button:last-of-type {
+  translate: 80px;
+}
+
+/* Slider Custom Dots Style */
+
+.slider_custom_dots .owl-dots {
+  display: block !important;
+  position: absolute;
+  bottom: -55px;
+  left: 50%;
+  translate: -50%;
+}
+
+.slider_custom_dots .owl-dots .owl-dot span {
+  background: #fff;
+  border: 1px solid #153e5a;
+}
+
+.slider_custom_dots .owl-dots .active span {
+  background: #153e5a !important;
+}
+
+/* Swiper overwrite */
+
+.main_slider {
+  height: 100%;
+  width: 100%;
+}
+
+.main_slider .swiper-slide a img {
+  width: 100%;
+}
+
+.main_slider .swiper-button-prev,
+.main_slider .swiper-button-next {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: #fff4;
+}
+
+.main_slider .swiper-button-prev {
+  left: 3%;
+}
+
+.main_slider .swiper-button-next {
+  right: 3%;
+}
+
+.main_slider .swiper-button-prev::after,
+.main_slider .swiper-button-next::after {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .main_slider .swiper-button-prev,
+  .main_slider .swiper-button-next,
+  .slider_custom_arrow .owl-nav,
+  .slider_custom_dots .owl-dots {
+    display: none !important;
+  }
+}

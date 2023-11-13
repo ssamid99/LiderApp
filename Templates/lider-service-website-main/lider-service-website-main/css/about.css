@@ -1,0 +1,154 @@
+.about-page {
+  background: url("../assets/static-photos/single-page-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.aboutWrapper {
+  padding: 40px;
+  background-color: #fff;
+  margin-top: 50px;
+}
+
+.aboutWrapper_imgBox img {
+  width: 100%;
+}
+
+.aboutWrapper > h3 {
+  margin: 30px 0;
+}
+
+.about_box {
+  display: flex;
+  gap: 50px;
+}
+
+.about_box_column {
+  display: flex;
+  gap: 25px;
+}
+
+.about_box_column_imgbox {
+  min-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e2f0fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_box_column_textBox > p {
+  margin: 5px 0 0;
+}
+
+.about_service {
+  margin: 80px 0;
+  background-color: #fff;
+  padding: 60px 25% 60px 12.5%;
+  position: relative;
+  width: 75%;
+}
+
+.about_service_text {
+  position: relative;
+}
+
+.about_service_text::before {
+  content: "";
+  position: absolute;
+  width: 460px;
+  height: 550px;
+  background: transparent;
+  border: 1px solid var(--color-blue);
+  right: -111%;
+  z-index: 2;
+}
+
+.about_service_text::after {
+  content: "";
+  right: -115%;
+  top: 20px;
+  position: absolute;
+  background: url("../assets/static-photos/about-page-callcenter.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 460px;
+  height: 550px;
+}
+
+.about_service_img {
+  display: none;
+}
+
+.about_service_img img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.about_service_text > h3 {
+  margin-bottom: 20px;
+}
+
+.services_map {
+  padding: 60px;
+  color: #fff;
+  background: url("../assets/static-photos/services-page-map-bg.png");
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+}
+
+.services_map h3 {
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .about_service {
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto 80px;
+  }
+
+  .about_service_img {
+    display: block;
+  }
+
+  .about_service_text::before,
+  .about_service_text::after {
+    content: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about_box {
+    flex-direction: column;
+  }
+
+  .about_box_column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about_service {
+    width: 85%;
+  }
+
+  .services_map {
+    padding: 60px 0;
+  }
+
+  .services_mapWrapper iframe {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about_service {
+    width: 90%;
+  }
+
+  .services_mapWrapper iframe {
+    height: 350px;
+  }
+}

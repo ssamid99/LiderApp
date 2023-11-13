@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        MTT Service texniki servis. Məişət texnikasının təmiri üçün müraciet edin.
+        Paltaryuyan, kondisioner, soyuducu və digər istənilən texnika təmiri. MTT
+        servis
+    </title>
+
+    <link rel="icon" href="~/assets/icons/page-icon.svg" />
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="~/css/nice-select.css" />
+
+    <link rel="stylesheet" href="~/style.css" />
+    <link href="~/css/pageheader.css" rel="stylesheet" />
+    @RenderSection("addcss", required:false)
+</head>
+
+<body>
+    <header>
+        <div class="header_top_container">
+            <div class="container">
+                <div class="header_top row">
+                    <div class="header_top_left">
+                        <a href="#">Servis məntəqələrimiz</a>
+
+                        <a href="#">Tez-tez verilən suallar</a>
+                    </div>
+
+                    <div class="header_top_right">
+                        <a href="#">
+                            <span>
+                                <img src="assets/icons/message-icon.svg" alt="message-icon" />
+                            </span>
+
+                            office@solitonservice.com
+                        </a>
+
+                        <div class="line"></div>
+
+                        <div class="header_social_icon_wrapper">
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_center_container">
+            <div class="container">
+                <div class="header_center">
+                    <a href="index.html" class="header_logoBox">
+                        <img src="assets/static-photos/logo.svg" alt="" />
+                    </a>
+
+                    <div class="header_phoneWrapper">
+                        <div class="header_phoneColumn">
+                            <a href="#">
+                                <span>
+                                    <img src="assets/icons/phone-icon.svg" alt="" />
+                                </span>
+
+                                (+994 12) 565-1-565
+                            </a>
+                            <a href="#">
+                                <span>
+                                    <img src="assets/icons/phone-icon.svg" alt="" />
+                                </span>
+
+                                (+994 12) 565-2-565
+                            </a>
+                        </div>
+
+                        <div class="header_phoneColumn">
+                            <a href="#">
+                                <span>
+                                    <img src="assets/icons/phone-icon.svg" alt="" />
+                                </span>
+
+                                (+994 55) 222-34-19
+                            </a>
+                            <a href="#">
+                                <span>
+                                    <img src="assets/icons/phone-icon.svg" alt="" />
+                                </span>
+
+                                (+994 55) 222-32-46
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="header_numberWrapper row">
+                        <span>
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+
+                        <span>180</span>
+                    </a>
+
+                    <div class="hamburger">
+                        <img src="~/assets/icons/hamburger.svg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <div class="container">
+            <div class="footerWrapper">
+                <div class="footer_logo_column">
+                    <div class="footer_logoBox">
+                        <img src="~/assets/static-photos/logo.svg" alt="" />
+                    </div>
+
+                    <p>
+                        "Lider Service" təcrübəli mütəxəssislər və konsultantlar
+                        komandasıdır
+                    </p>
+
+                    <div class="footer_logo_column_socialMediaIcons">
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer_website_navigation">
+                    <h4 class="footer_column_header">Saytın xəritəsi</h4>
+
+                    <div class="footer_columnWrapper">
+                        <div class="footer_column">
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Əsas səhifə</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Çatdırılma</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Quraşdırma</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Usta sifarişi</span>
+                            </a>
+                        </div>
+
+                        <div class="footer_column">
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Çatdırılma</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Zəmanət</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Haqqımızda</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/double-arrow.svg" alt="" />
+
+                                <span>Əlaqə</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer_contact">
+                    <h4 class="footer_column_header">Əlaqə</h4>
+
+                    <div class="footer_columnWrapper">
+                        <div class="footer_column">
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/phone-icon.svg" alt="" />
+
+                                <span>(+994 12) 565-1-565</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/phone-icon.svg" alt="" />
+
+                                <span>(+994 12) 565-2-565</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/phone-icon.svg" alt="" />
+
+                                <span>(+994 55) 222-32-46</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/phone-icon.svg" alt="" />
+
+                                <span>(+994 55) 222-34-19</span>
+                            </a>
+                        </div>
+
+                        <div class="footer_column">
+                            <a href="#" class="footer_link">
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <span>Bakı ş., Şamaxı yolu 15-ci km.</span>
+                            </a>
+
+                            <a href="#" class="footer_link">
+                                <img src="~/assets/icons/mail-bg-blue.svg" alt="" />
+
+                                <span>office@solitonservice.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_bottomBox row">
+                <span>© Lider Service - 2022. Müəllif hüquqları qorunur.</span>
+
+                <span>Sayt Jedai tərəfindən yaradılmışdır.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+            integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script src="~/js/jquery.nice-select.js"></script>
+
+    <script src="~/js/sliderOption.js"></script>
+
+    <script src="~/js/nice-select.js"></script>
+
+    <script src="~/script.js"></script>
+    <script src="~/js/title-scroll.js" data-start="100" data-speed="100"></script>
+    @RenderSection("addjs", required:false)
+    
+</body>
+</html>

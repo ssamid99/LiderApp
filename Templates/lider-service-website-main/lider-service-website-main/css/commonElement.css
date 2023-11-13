@@ -1,0 +1,168 @@
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-blue);
+  border-radius: 7px;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pages_background {
+  background-image: url("../assets/static-photos/single-page-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+}
+
+.secondary_header {
+  display: inline-block;
+  font-size: 36px;
+  font-family: roboto-700;
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.third_header {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.four_header {
+  font-size: 16px;
+  color: var(--color-light-black);
+}
+
+.footer_column_header {
+  position: relative;
+  font-size: 20px;
+  font-family: roboto-700;
+  margin-bottom: 30px;
+  border-left: 3px solid var(--color-blue);
+  padding-left: 10px;
+}
+
+.secondary_header::before,
+.secondary_header::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: var(--color-orange);
+  top: 60%;
+  transform: translateY(-60%);
+}
+
+.secondary_header::before {
+  left: -45px;
+}
+
+.secondary_header::after {
+  right: -50px;
+}
+
+.page_contact_btnWrapper {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.blue_button {
+  padding: 25px 75px;
+  border-radius: 8px;
+  border: 1px solid var(--color-blue);
+  color: #fff;
+  background-color: var(--color-blue);
+  font-size: 24px;
+  display: inline-block;
+}
+
+.page_content_wrapper {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 5px 20px rgba(3, 54, 87, 0.15);
+}
+
+.page_paragraph,
+.page_list {
+  margin: 25px 0;
+  color: var(--color-secondary-gray);
+  font-size: 16px;
+  font-family: roboto-400;
+  line-height: 1.3;
+}
+
+.page_list {
+  padding-left: 20px;
+}
+
+.page_list li {
+  list-style: disc;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+
+  .secondary_header {
+    font-size: 30px;
+  }
+
+  .third_header {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 85%;
+  }
+  .secondary_header {
+    font-size: 25px;
+  }
+
+  .third_header {
+    font-size: 20px;
+  }
+
+  .page_contact_btnWrapper {
+    padding: 30px 0;
+  }
+
+  .blue_button {
+    padding: 15px 40px;
+    min-width: max-content;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    width: 90%;
+  }
+
+  .secondary_header {
+    font-size: 20px;
+  }
+
+  .third_header {
+    font-size: 17px;
+  }
+
+  .page_paragraph,
+  .page_list {
+    font-size: 14px;
+  }
+}

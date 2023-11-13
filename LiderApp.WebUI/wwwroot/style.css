@@ -1,0 +1,658 @@
+@import url("css/header.css");
+@import url("css/footer.css");
+@import url("css/commonElement.css");
+@import url("css/customReset.css");
+@import url("css/scrollbar.css");
+@import url("css/fonts.css");
+@import url("css/color.css");
+@import url("css/sliderOptions.css");
+
+/* Brands Slider */
+
+.brends_slider_wrapper {
+  padding: 80px 0;
+  font-family: roboto-500;
+  text-align: center;
+}
+
+.brends_slider_wrapper h3 {
+  margin-bottom: 65px;
+}
+
+.brends_sliderContainer .item {
+  margin: 0 15px;
+  max-height: 100%;
+}
+
+.brends_sliderContainer .owl-stage {
+  display: flex;
+  align-items: center;
+}
+
+.brends_sliderContainer .item img {
+  width: 100%;
+}
+
+/* Repair  and Installation section */
+
+.repair_installation {
+  padding: 70px 0;
+  text-align: center;
+  background: url("assets/static-photos/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.repair_productsSlider .owl-stage-outer {
+  z-index: 2;
+}
+
+.repair_productsSlider .owl-item {
+  transition: 0.7s;
+}
+
+.repair_productsSlider .owl-item:hover {
+  transform: translateY(-15px);
+}
+
+.repair_productsSlider .item {
+  height: 300px;
+  background-image: url("assets/product-photos/Mask-Group.png"),
+    linear-gradient(rgba(222, 230, 248, 1), rgba(222, 230, 248, 1));
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.repair_productsSlider .item a h4 {
+  font-size: 20px;
+  padding: 30px 0 20px 0;
+}
+
+.repair_productsSlider .item a img {
+  width: auto;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.repair_productsSlider .item a .repair_product_arrow {
+  position: relative;
+  height: 40px;
+  width: 90px;
+  background-color: #fff;
+  border-top-left-radius: 65px;
+  border-top-right-radius: 65px;
+  left: 50%;
+  bottom: -12%;
+  translate: -50%;
+  text-align: center;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.repair_productsSlider .item a .repair_product_arrow::before {
+  content: "";
+  transition: 0.4s;
+  position: absolute;
+  width: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-blue);
+  color: #fff;
+}
+
+.repair_productsSlider .item a .repair_product_arrow i {
+  width: 15px;
+  left: 42%;
+  top: 20px;
+  position: absolute;
+  transition: 0.4s;
+}
+
+.repair_productsSlider .item:hover > a .repair_product_arrow::before {
+  width: 100%;
+}
+
+.repair_productsSlider .item:hover > a .repair_product_arrow i {
+  color: #fff;
+}
+
+.showAll_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 60px;
+  color: var(--color-blue);
+  background: #fff;
+  cursor: pointer;
+  margin-top: 50px;
+  border: 1px solid var(--color-blue);
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.showAll_button i {
+  margin-left: 5px;
+}
+
+.repair_installation_container:last-of-type {
+  margin-top: 110px;
+}
+
+/* Map container */
+
+.map {
+  padding: 60px 0;
+  text-align: center;
+  background-color: var(--color-blue);
+}
+
+.map img {
+  width: 100%;
+}
+
+.map h3 {
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.map_wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* About Section */
+
+.about_liderService {
+  padding: 75px 0;
+  background: url("assets/static-photos/background-second.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.about_container {
+  display: flex;
+  gap: 30px;
+}
+
+.about_leftBox {
+  width: 40%;
+}
+
+.about_leftBox img {
+  width: 100%;
+}
+
+.about_rightBox {
+  width: 60%;
+}
+
+.about_rightBox h3 {
+  margin-bottom: 15px;
+}
+
+.about_rightBox p {
+  font-size: 16px;
+  font-family: roboto-400;
+  letter-spacing: 1.5px;
+}
+
+.rightBox_details {
+  margin-top: 20px;
+}
+
+.rightBox_details_row {
+  display: flex;
+  gap: 25px;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.rightBox_details_iconWrapper {
+  min-width: 60px;
+  height: 60px;
+  background-color: #e2f0fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightBox_details_textWrapper h5 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Service Slider Section */
+
+.service_slider {
+  padding-top: 80px;
+  background: url("assets/static-photos/background-four.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.service_slider > .background-frame:nth-of-type(1) {
+  position: absolute;
+  top: 65%;
+  left: 10%;
+  translate: -10% -65%;
+}
+
+.service_slider > .background-frame:nth-of-type(2) {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+.service_slider > h3:first-of-type {
+  margin-left: 12.5%;
+}
+
+.service_sliderWrapper {
+  margin-top: 50px;
+}
+
+.service_sliderWrapper .service_singleSlider {
+  height: 280px;
+}
+
+.service_sliderWrapper .service_singleSlider .service_textWrapper {
+  background: url("assets/service-photos/service-bg.jpg");
+  color: #fff;
+  height: 50px;
+  position: relative;
+}
+
+.service_sliderWrapper .service_singleSlider .service_textWrapper p {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-15%, -50%);
+}
+
+.service_sliderWrapper .owl-nav {
+  position: absolute;
+  top: -100px;
+  right: 12.5%;
+  margin: 0;
+}
+
+.service_sliderWrapper .owl-nav .owl-prev,
+.service_sliderWrapper .owl-nav .owl-next {
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+  border: 1px solid var(--color-blue) !important;
+  position: relative;
+}
+
+.service_sliderWrapper .owl-nav .owl-prev span,
+.service_sliderWrapper .owl-nav .owl-next span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  color: var(--color-blue);
+  font-size: 22px;
+}
+
+.service_sliderWrapper .owl-nav .owl-prev:hover,
+.service_sliderWrapper .owl-nav .owl-next:hover {
+  background: #fff;
+}
+
+/* Service FAQ */
+
+.services_faq {
+  margin-top: 110px;
+}
+
+.services_faqWrapper {
+  display: flex;
+  gap: 100px;
+}
+
+.services_faq_imgWrapper {
+  position: relative;
+  height: 500px;
+  width: 40%;
+}
+
+.services_faq_imgWrapper > img:nth-of-type(1) {
+  width: 100%;
+}
+
+.services_faq_imgWrapper > img:nth-of-type(2) {
+  border: 15px solid #faf9fe;
+  position: absolute;
+  left: 20%;
+  top: 30%;
+}
+
+.services_faq_textWrapper {
+  width: 60%;
+}
+
+.faq_questionWrapper {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #dadfe2;
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.faq_questionWrapper:first-of-type {
+  margin-top: 45px;
+}
+
+.faq_questionWrapper_header {
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.faq_questionWrapper_header h5 {
+  font-weight: 500;
+}
+
+.faq_questionWrapper_header i {
+  margin-left: 15px;
+}
+
+.faq_questionWrapper_header:hover {
+  color: var(--color-blue);
+}
+
+.faq_answer {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0.17, 0.16, 0.6, 0.6);
+  padding-left: 15px;
+  font-family: roboto-400;
+}
+
+.faq_answer-active {
+  height: 100%;
+  padding: 15px 0 0 15px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Feedback Section */
+
+.feedback {
+  padding: 50px 0 80px;
+  text-align: center;
+  background: #f5f6f8;
+}
+
+.feedback_slider .owl-dots {
+  display: block;
+}
+
+/* Order Section */
+
+.order_form,
+.order_formWrapper_leftBox,
+.order_formWrapper_rightBox {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+.order_form {
+  padding: 65px 0;
+  background: url("assets/static-photos/blue-bg.jpg");
+}
+
+.order_formWrapper {
+  display: flex;
+}
+
+.order_formWrapper_leftBox {
+  padding: 50px 30px;
+  border-radius: 12px 0 0 12px;
+  flex: 5.5;
+  background: url("assets/static-photos/order-bg-1.png");
+}
+
+.order_formWrapper_rightBox {
+  border-radius: 0 12px 12px 0;
+  padding: 50px;
+  flex: 4.5;
+  background-image: url("assets/static-photos/order-bg-2.png");
+}
+
+.order_formWrapper_leftBox p {
+  margin: 25px 0;
+  font-size: 16px;
+  font-family: roboto-400;
+}
+
+.form_inputWrapper_row:first-of-type {
+  margin-bottom: 30px;
+}
+
+.form_inputWrapper_row input,
+.form_inputWrapper_row textarea,
+.form_inputWrapper_row .nice-select {
+  width: calc(50% - 10px);
+  height: 35px;
+  background: transparent;
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #979797;
+  padding: 10px;
+  color: #979797;
+}
+
+.form_inputWrapper_row .nice-select span {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+}
+
+.form_inputWrapper_row textarea {
+  resize: vertical;
+}
+
+.form_inputWrapper_row input:first-of-type,
+.form_inputWrapper_row .nice-select {
+  margin-right: 25px;
+}
+
+.order_formWrapper_leftBox button {
+  padding: 10px 50px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: var(--color-blue);
+  border: 1px solid var(--color-blue);
+  margin-top: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.order_formWrapper_rightBox {
+  color: #fff;
+}
+
+.order_contact_row {
+  display: flex;
+}
+
+.order_contact_row:first-of-type {
+  margin-top: 60px;
+}
+
+.order_contact_row:nth-of-type(2) {
+  margin: 30px 0;
+}
+
+.order_contact_row:nth-of-type(2) p {
+  margin-bottom: 7px;
+}
+
+.order_contact_row i {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .showAll_button {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .service_sliderWrapper .service_singleSlider .service_textWrapper p {
+    font-size: 14px;
+  }
+
+  .services_faqWrapper {
+    gap: 60px;
+  }
+
+  .services_faq_imgWrapper > img:nth-of-type(1) {
+    width: 250px;
+  }
+
+  .services_faq_imgWrapper > img:nth-of-type(2) {
+    width: 250px;
+    top: 20%;
+    left: 15%;
+  }
+
+  .repair_productsSlider .item {
+    height: 250px;
+  }
+
+  .repair_productsSlider .item a h4 {
+    padding: 20px 0 15px;
+    font-size: 17px;
+  }
+
+  .order_formWrapper_leftBox,
+  .order_formWrapper_rightBox {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .conatiner {
+    width: 85%;
+  }
+
+  .brends_slider_wrapper,
+  .repair_installation {
+    padding: 30px 0;
+  }
+
+  .brends_slider_wrapper h3 {
+    margin-bottom: 40px;
+  }
+
+  .repair_productsSlider .item {
+    height: 200px;
+  }
+
+  .repair_productsSlider .item a h4 {
+    font-size: 15px;
+  }
+
+  .repair_productsSlider .item a .repair_product_arrow {
+    bottom: -4%;
+  }
+
+  .showAll_button {
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .about_container {
+    flex-direction: column;
+  }
+
+  .about_leftBox,
+  .about_rightBox {
+    width: 100%;
+  }
+
+  .services_faq_imgWrapper {
+    display: none;
+  }
+
+  .services_faq_textWrapper {
+    width: 100%;
+  }
+
+  .order_formWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .order_formWrapper_leftBox,
+  .order_formWrapper_rightBox {
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .order_formWrapper_rightBox .order_contact_row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .services_faq {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .repair_installation_container:last-of-type {
+    margin-top: 50px;
+  }
+
+  .map_wrapper {
+    height: 350px;
+  }
+
+  .map_wrapper iframe {
+    height: inherit;
+  }
+
+  .about_rightBox p {
+    font-size: 14px;
+  }
+
+  .rightBox_details_row {
+    flex-direction: column;
+  }
+
+  .rightBox_details_iconWrapper {
+    margin-left: 50%;
+    translate: -50% 0;
+    width: 60px;
+  }
+
+  .service_slider {
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  .service_slider > h3:first-of-type {
+    margin: 0;
+  }
+
+  .about_liderService {
+    padding: 35px 0;
+  }
+}

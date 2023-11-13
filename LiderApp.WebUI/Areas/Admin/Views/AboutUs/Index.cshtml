@@ -1,0 +1,144 @@
+﻿@model IEnumerable<AboutUs>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>İndex</h1>
+
+<h4>Haqqımızda</h4>
+<hr />
+@foreach (var item in Model)
+{
+
+    @if (item.Id == null)
+    {
+        <div class="card-block table-border-style">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+
+                            <th class="operations">
+                                @*@if (User.HasAccess("admin.blogposts.create"))
+                        }
+                        {*@
+                                <a asp-action="Create" class="btn btn-sm btn-primary">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="page-wrapper">
+            <div class="page-header">
+                <div class="row align-items-end">
+                    <div class="col-lg-8">
+                        <div class="page-header-title">
+                            <div class="d-inline">
+                                <h4>Haqqımızda Admin Səhifəsi</h4>
+                                <span>
+                                    Bu hissədə haqqımızda səhifəsi haqqında
+                                    ətrafli məlumat ala bilərsiniz
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="page-header-breadcrumb">
+                            <ul class="breadcrumb-title">
+                                <li class="breadcrumb-item" style="float: left;">
+                                    <a asp-controller="Dashboard" asp-action="index"> <i class="feather icon-home"></i> </a>
+                                </li>
+                                <li class="breadcrumb-item" style="float: left;">
+                                    <a asp-action="index">Haqqımızda</a>
+                                </li>
+                                <li class="breadcrumb-item" style="float: left;">
+                                    <span>Detallı</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+
+
+                                <div class="card-header-right">
+                                    <i class="icofont icofont-spinner-alt-5"></i>
+                                </div>
+
+                            </div>
+                            <div class="card-block">
+                                <div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Şəkil</label>
+                                        <div class="col-sm-10">
+                                                <label class="image-viewer" style="background-image:url(/uploads/images/@item.WebImages.FirstOrDefault(w=>w.IsMain == true && w.DeletedDate == null)?.Name)"></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row ">
+                                        <label asp-for="@item.Title" class="col-sm-2 col-form-label">Başlıq</label>
+                                        <div class="fix-row">
+                                            @Html.Raw(item.Title)
+                                        </div>
+                                    </div>
+                                    @foreach (var imgItem in item.WebImages.Where(w => w.AboutUsId == item.Id && w.IsMain == false && w.DeletedDate == null))
+                                    {
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Şəkil</label>
+                                            <div class="col-sm-10">
+                                                <label class="image-viewer" style="background-image:url(/uploads/images/@imgItem.Name)"></label>
+                                            </div>
+                                        </div>
+                                    }
+                                    <div class="form-group row ">
+                                        <label asp-for="@item.Text" class="col-sm-2 col-form-label">Text</label>
+                                        <div class="fix-row">
+                                            @Html.Raw(item.Text)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-12 d-flex justify-content-end">
+                                            @*@if (User.HasAccess("admin.blogposts.edit"))
+                                    }
+                                    {*@
+                                            <a asp-action="edit" asp-route-id=@item.Id class="btn btn-warning mr-2 fix-btn">Edit</a>
+                                            @*@if (User.HasAccess("admin.blogposts.index"))
+                                    }
+                                    }
+                                    {*@
+                                            <a asp-action="index" class="btn btn-info">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+

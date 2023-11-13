@@ -1,0 +1,118 @@
+.orderMaster_content {
+  display: flex;
+  height: 100vh;
+}
+
+header {
+  display: none;
+}
+
+.orderMaster_content_leftBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 34%;
+  background: url("../assets/static-photos/usta-sifaris-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.orderMaster_content_leftBox a {
+  margin: 100px 0 0 31.25%;
+  color: #fff;
+}
+
+.orderMaster_content_leftBox > img {
+  position: absolute;
+  max-width: 200px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.orderMaster_form {
+  padding: 0 20.83% 0 70px;
+  background: url("../assets/static-photos/single-page-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.orderMaster_form > h3 {
+  margin-bottom: 50px;
+}
+
+.orderMaster_form input,
+.orderMaster_form .nice-select,
+textarea {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 25px;
+  font-size: 18px;
+  color: var(--color-gray);
+  border: 1px solid var(--color-gray);
+  line-height: normal;
+  height: 75px;
+  width: 100% !important;
+}
+
+.orderMaster_form .nice-select ul {
+  width: 100%;
+}
+
+.orderMaster_form input {
+  margin-bottom: 20px;
+}
+
+.orderMaster_form textarea {
+  margin: 20px 0 30px;
+  height: 180px;
+  resize: vertical;
+}
+
+.orderMaster_form button {
+  width: max-content;
+  max-height: 60px;
+  padding: 15px 75px;
+}
+
+@media screen and (max-width: 1000px) {
+  .orderMaster_form input,
+  .orderMaster_form .nice-select,
+  textarea {
+    padding: 15px;
+    height: 50px;
+  }
+
+  .orderMaster_content_leftBox a {
+    margin-left: 15%;
+  }
+
+  .orderMaster_form {
+    padding: 0 7.51% 0 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .orderMaster_content_leftBox {
+    display: none;
+  }
+
+  header {
+    display: block;
+  }
+
+  .orderMaster_form {
+    width: 100%;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .orderMaster_form button {
+    padding: 10px 30px;
+  }
+}

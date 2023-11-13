@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Warranty>
+@await Component.InvokeAsync("Menu")
+<div class="page_header">
+    <h3 class="third_header">Zəmanət</h3>
+
+    <div class="page_header_nav">
+        <a asp-controller="home" asp-action="index">Əsas səhifə</a>
+
+        <span>/</span>
+
+        <a asp-controller="repair" asp-action="index">Zəmanət</a>
+    </div>
+</div>
+<section class="warranty pages_background">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="page_content_wrapper warranty_contentWrapper">
+                <p class="page_paragraph">@Html.Raw(item.Title)</p>
+
+                <div class="warranty_contentWrapper_imgBox">
+                    <img src="~/uploads/images/@item.ImagePath" alt="" />
+                </div>
+
+                <p class="page_paragraph">
+                    @Html.Raw(item.Text)
+                </p>
+
+            </div>
+        }
+    </div>
+
+    <div class="page_contact_btnWrapper">
+        <a href="#" class="blue_button">ƏLAQƏ</a>
+    </div>
+</section>

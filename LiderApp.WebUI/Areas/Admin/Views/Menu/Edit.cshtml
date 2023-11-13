@@ -1,0 +1,120 @@
+﻿@model MenuPutCommand
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Redaktə Et</h1>
+
+<h4>Menyu</h4>
+<hr />
+<div class="row align-items-end">
+    <div class="col-lg-8">
+        <div class="page-header-title">
+            <div class="d-inline">
+                <h4>Menyu Admin Səhifəsi</h4>
+                <span>
+                    Bu hissədə menyu ehtiyaca uyğun
+                    redaktə edə bilərsiniz
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="page-header-breadcrumb">
+            <ul class="breadcrumb-title">
+                <li class="breadcrumb-item" style="float: left;">
+                    <a asp-controller="Dashboard" asp-action="index"> <i class="feather icon-home"></i> </a>
+                </li>
+                @*@if (User.HasAccess("admin.rooms.index"))
+                }
+                {*@
+                    <li class="breadcrumb-item" style="float: left;">
+                        <a asp-action="index">Menyu</a>
+                    </li>
+                <li class="breadcrumb-item" style="float: left;">
+                    <span>Redaktə Et</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="page-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+
+
+                    <div class="card-header-right">
+                        <i class="icofont icofont-spinner-alt-5"></i>
+                    </div>
+
+                </div>
+                <div class="card-block">
+
+                    <form method="post" autocomplete="off" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label asp-for="Name" class="col-sm-3 col-form-label">Menyu Adı:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="ControllerName" class="col-sm-3 col-form-label">Menyu Controller Adı:</label>
+                            <div class="col-sm-9">
+                                <textarea asp-for="ControllerName" class="form-control" id="tiny"></textarea>
+                                <span asp-validation-for="ControllerName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label asp-for="ParentId" class="col-sm-3 col-form-label">Aid Olduğu Menyu Adı:</label>
+                            <div class="col-sm-5">
+                                <select asp-for="ParentId" asp-items="@ViewBag.ParentId" class="select2">
+                                   
+                                        
+                                        <option disabled selected>---Seçim Edin---</option>
+                                    
+                                </select>
+                                <span asp-validation-for="ParentId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 d-flex justify-content-end">
+                                <button class="btn btn-primary mr-2 fix-btn">Yadda Saxla</button>
+                                @*@if (User.HasAccess("admin.rooms.index"))
+                                }
+                                {*@
+                                    <a asp-controller="menu" asp-action="index" class="btn btn-info">Geri</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section addjs {
+    <script class="removeable" src="~/lib/select2/js/select2.full.min.js"></script>
+
+    <script>
+        $('.select2').select2();
+    </script>
+}
+
+@section addcss{
+    <link rel="stylesheet" href="~/lib/select2/css/select2.css" />
+    <style>
+        button {
+            margin-right: 5px;
+        }
+
+        span .select2-selection__rendered {
+            height: 100%;
+            font-size: 90%;
+        }
+    </style>
+}

@@ -1,0 +1,118 @@
+﻿@model AboutUsPutCommand
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Redaktə Et</h1>
+
+<h4>Haqqımızda</h4>
+<hr />
+<div class="page-wrapper">
+    <div class="page-header">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <div class="d-inline">
+                        <h4>Haqqımızda Admin Səhifəsi</h4>
+                        <span>
+                            Bu hissədə haqqımızda səhifəsində uyğun
+                            dəyişikliklər edə bilərsiniz
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a asp-controller="Dashboard" asp-action="index"> <i class="feather icon-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a asp-action="index">Haqqımızda</a>
+                        </li>
+                        <li class="breadcrumb-item" style="float: left;">
+                            <span>Redaktə Et</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+
+
+                        <div class="card-header-right">
+                            <i class="icofont icofont-spinner-alt-5"></i>
+                        </div>
+
+                    </div>
+                    <div class="card-block">
+
+                        <form method="post" autocomplete="off" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <div class="col-12 col-md-6">
+                                    <div style="width: 100%;" class="imager-container" id="viewer1" name="Images">
+
+                                        @foreach (var item in Model.Images)
+                                        {@*
+                                            @if()*@
+                                            <label thumb-url='/uploads/images/@item.TempPath' image-id="@item.Id" @(item.IsMain ? "checked" : "")></label>
+                                        }
+
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="Title" class="form-label"></label>
+                                        <textarea asp-for="Title" class="form-control" id="tiny"></textarea>
+                                        <span asp-validation-for="Title" class="text-danger"></span>
+
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-12">
+                                    <div class="form-group ">
+                                        <label asp-for="Text" class="form-label"></label>
+                                        <textarea asp-for="Text" class="form-control" id="tiny"></textarea>
+                                        <span asp-validation-for="Text" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <input type="hidden" asp-for="Id" />
+                                    <button class="btn btn-primary mr-2" type="submit">Yadda saxla</button>
+                                    <a asp-action="index" class="btn btn-info">Geri</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section addjs {
+    <script class="removeable" src="~/lib/multiple-imager-js/js/imager.js"></script>
+    <script>
+        $('#viewer1').imgadd({
+            tnWidth: '60px',
+            tnHeight: '60px',
+            fontSize: '55px',
+            plusInnerHtml: '',
+            plusBtnClass: undefined
+        });
+    </script>
+}
+
+@section addcss{
+    <link rel="stylesheet" href="~/lib/multiple-imager-js/css/imager.css" />
+}

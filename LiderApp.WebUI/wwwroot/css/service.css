@@ -1,0 +1,102 @@
+@import url("color.css");
+@import url("commonElement.css");
+@import url("pageHeader.css");
+
+.repair_content {
+  background: url("../assets/static-photos/background-four.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.bg-frame {
+  position: absolute;
+}
+
+.repair_content > .bg-frame:first-of-type {
+  top: 260px;
+  left: 80px;
+}
+
+.repair_content > .bg-frame:nth-of-type(2) {
+  bottom: 80px;
+  right: 80px;
+}
+
+.service_itemWrapper {
+  display: flex;
+  gap: 50px 25px;
+  flex-wrap: wrap;
+  padding: 100px 0;
+  justify-content: center;
+}
+
+.service_item {
+  height: 300px;
+  width: 250px;
+  background-image: url("../assets/product-photos/Mask-Group.png"),
+    linear-gradient(rgba(222, 230, 248, 1), rgba(222, 230, 248, 1));
+  border-radius: 10px;
+  transition: 0.4s;
+  text-align: center;
+  z-index: 2;
+}
+
+.service_item h4 {
+  font-size: 20px;
+  padding: 30px 0 20px 0;
+}
+
+.service_item img {
+  width: auto;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.service_arrow {
+  position: relative;
+  height: 40px;
+  width: 90px;
+  background-color: #fff;
+  border-top-left-radius: 65px;
+  border-top-right-radius: 65px;
+  left: 50%;
+  bottom: -32px;
+  translate: -50%;
+  text-align: center;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.service_arrow::before {
+  content: "";
+  transition: 0.4s;
+  position: absolute;
+  width: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-blue);
+  color: #fff;
+}
+
+.service_arrow i {
+  width: 15px;
+  left: 42%;
+  top: 20px;
+  position: absolute;
+  transition: 0.4s;
+  color: var(--color-blue);
+}
+
+.service_item:hover .service_arrow::before {
+  width: 100%;
+}
+
+.service_item:hover .service_arrow i {
+  color: #fff;
+}
+
+.service_item:hover {
+  translate: 0 -15px;
+}

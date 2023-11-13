@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Menu>
+<div class="header_navbar_container">
+    <div class="container">
+        <div class="header_navbar">
+            <ul class="navbar_links row">
+                @foreach (var item in Model)
+                {
+
+                    <li class="navbar_singleLink">
+                        @if (item.ParentId == null)
+                        {
+                            <p class="navbar_dropdownParent">
+                                <a asp-controller="@item.ControllerName" asp-action="index">@item.Name</a>
+                                @if (Model.Any(m => m.ParentId == item.Id && m.DeletedDate == null))
+                                {
+                                    <i class="fa-solid fa-angle-down"></i>
+                                }
+                            </p>
+                        }
+                        @if (Model.Any(m => m.ParentId == item.Id && m.DeletedDate == null))
+                        {
+                            <ul class="dropdownMenu">
+                                @foreach (var subItem in Model.Where(m => m.ParentId == item.Id && m.DeletedDate == null))
+                                {
+                                    <li>
+                                        <a asp-controller="@subItem.ControllerName" asp-action="Details" asp-route-id="@subItem.ActionId">@subItem.Name</a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </li>
+                }
+
+                <li class="navbar_singleLink">
+                    <p class="navbar_dropdownParent">
+                        <a href="#">AZ</a>
+
+                        <i class="fa-solid fa-angle-down"></i>
+                    </p>
+
+                    <div class="dropdownMenu">
+                        <ul>
+                            <li>
+                                <a href="#">AZ</a>
+                            </li>
+
+                            <li>
+                                <a href="#">EN</a>
+                            </li>
+
+                            <li>
+                                <a href="#">RU</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="mobile_menu">
+    <div class="mobile_langWrapper">
+        <span>AZ</span>
+
+        <span>EN</span>
+
+        <span>RU</span>
+    </div>
+    <div class="close_button">
+        <img src="~/assets/icons/mobile-menu-close.svg" alt="" />
+    </div>
+
+    <ul class="mobile_navbar_links">
+        @foreach (var item in Model)
+        {
+
+            <li class="mobile_navbar_singleLink">
+                <p class="navbar_dropdownParent">
+                    <a asp-controller="@item.ControllerName" asp-action="index">@item.Name</a>
+                    @if (item.ParentId != null)
+                    {
+                        <i class="mobileDropdownMenuButton fa-solid fa-plus"></i>
+                    }
+                </p>
+                @if (item.ParentId != null)
+                {
+                    @foreach (var subItem in Model.Where(m => m.ParentId == item.Id && m.DeletedDate == null))
+                    {
+                        <ul class="mobile_dropdownMenu">
+                            <li>
+                                <a asp-controller="@subItem.ControllerName" asp-action="details" asp-route-id="@subItem.ActionId">@subItem.Name</a>
+                            </li>
+                        </ul>
+                    }
+                }
+            </li>
+        }
+    </ul>
+    <div class="mobile_menu_phoneWrapper">
+        <div class="mobile_menu_phoneBox">
+            <i class="fa-solid fa-phone"></i>
+            <a href="#">(+994 12) 565-1-565</a>
+        </div>
+
+        <div class="mobile_menu_phoneBox">
+            <i class="fa-solid fa-phone"></i>
+            <a href="#">(+994 55) 222-34-19</a>
+        </div>
+    </div>
+</div>

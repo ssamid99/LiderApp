@@ -1,0 +1,56 @@
+.warranty h3 {
+  margin-bottom: 30px;
+}
+
+.warranty_contentWrapper_imgBox img {
+  width: 100%;
+}
+
+.warranty_contentWrapper_success-message,
+.warranty_contentWrapper_error-message {
+  margin: 20px 0;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.warranty_contentWrapper_success-message {
+  color: var(--color-green);
+}
+
+.warranty_contentWrapper_error-message {
+  color: var(--color-orange);
+}
+
+.warranty_contentWrapper_message_icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border-color: inherit;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-size: 10px;
+}
+
+.warranty_end_text {
+  color: var(--color-black);
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.warranty_contentWrapper ol {
+  font-size: 16px;
+  color: var(--color-secondary-gray);
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.warranty_contentWrapper ol li {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+}

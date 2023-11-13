@@ -1,0 +1,112 @@
+﻿@model CargoPostCommand
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Əlavə Et</h1>
+
+<h4>Çatdırılma</h4>
+<hr />
+
+<div class="page-wrapper">
+    <div class="page-header">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <div class="d-inline">
+                        <h4>Çatdırılma Admin Səhifəsi</h4>
+                        <span>
+                            Bu hissədə çatdırılma məlumatlarini əlavə edə bilərsiniz,
+                            unutmayın ki, bu səhifə çatdırılma yaradildiqdan sonra birdaha görülməyəcək
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a asp-controller="Dashboard" asp-action="index"> <i class="feather icon-home"></i> </a>
+                        </li>
+                        @*@if (User.HasAccess("admin.blogposts.index"))
+                        }
+                        {*@
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a asp-action="index">Çatdırılma</a>
+                        </li>
+                        <li class="breadcrumb-item" style="float: left;">
+                            <span>Əlavə Et</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+
+
+                        <div class="card-header-right">
+                            <i class="icofont icofont-spinner-alt-5"></i>
+                        </div>
+
+                    </div>
+                    <div class="card-block">
+
+                        <form method="post" autocomplete="off" enctype="multipart/form-data">
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Image</label>
+                                <div class="col-sm-10">
+                                    <label class="image-viewer" for="image"></label>
+                                    <input id="image" name="image" type="file" hidden />
+                                    <span asp-validation-for="Image" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Text" class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <textarea asp-for="Text" class="form-control" id="tiny"></textarea>
+                                    <span asp-validation-for="Text" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button class="btn btn-primary mr-2 fix-btn">Yadda Saxla</button>
+                                    @*@if (User.HasAccess("admin.blogposts.index"))
+                                    }
+                                    {*@
+                                    <a asp-controller="cargo" asp-action="index" class="btn btn-info">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section addjs {
+
+    <script>
+        let reader = new FileReader();
+        reader.addEventListener('load', function () {
+            let imageViewer = document.querySelector('.image-viewer');
+            imageViewer.setAttribute('style', `background-image:url(${reader.result})`);
+            //url(data;.....)
+
+            console.log(reader.result);
+        });
+        document.getElementById('image').addEventListener('change', function (e) {
+
+            console.log(e);
+            const selectedFile = e.currentTarget.files[0];
+            reader.readAsDataURL(selectedFile);
+
+        });
+    </script>
+}

@@ -1,0 +1,75 @@
+﻿@model RepairOrderPostCommand
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usta sifarişi</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../css/nice-select.css" />
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/orderExpert.css" />
+    <link rel="stylesheet" href="../css/customReset.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/commonElement.css" />
+    <link rel="stylesheet" href="../css/color.css" />
+</head>
+<body>
+    <section class="orderMaster">
+        <div class="orderMaster_content">
+            <div class="orderMaster_content_leftBox">
+                <a href="../index.html">
+                    <i class="fa-solid fa-arrow-left-long"></i> Geri qayıt
+                </a>
+
+                <img src="../assets/static-photos/logo-order-master.svg" alt="" />
+            </div>
+
+            <form asp-controller="repairorder" asp-action="index" method="post" autocomplete="off" enctype="multipart/form-data" class="orderMaster_form">
+                <h3 class="third_header">Usta Sifarişi</h3>
+
+                <input asp-for=FullName type="text" placeholder="*Adınız və Soyadınız" />
+                <span asp-validation-for="FullName"></span>
+
+                <input asp-for=PhoneNumber type="tel" placeholder="*Telefon nömrəniz" />
+                <span asp-validation-for="PhoneNumber"></span>
+
+                <select asp-for="ServiceId" asp-items="@ViewBag.Services" class="select2">
+                    <option disabled selected>---Secin---</option>
+                </select>
+                <span asp-validation-for="ServiceId"></span>
+                <textarea asp-for=Text placeholder="Sifariş haqqında məlumat"></textarea>
+                <span asp-validation-for="Text"></span>
+                <button type="submit" class="blue_button">Sifariş et</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="../js/jquery.nice-select.js"></script>
+
+    <script src="../js/nice-select.js"></script>
+
+    <script src="../script.js"></script>
+</body>
+</html>
